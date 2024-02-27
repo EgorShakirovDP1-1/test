@@ -6,3 +6,8 @@ $mainīga_vārds = value
 Model-view-controller arhitekrūra. Modelis - datu glābšanas un manipulācijas. View - attelošana, saskaršana ar lietotājiem, rāda datus. Controller - apstrāda lietotāju pieprasījumus un strāda ka starpnieks starp model un view: lietotājs ievada pieprasījumu Viewā, controller dod signālu, un model apstrāda un atgriež nepieciešamus datus. 
 #Kas ir ORM, kāpēc to izmanto tīra SQL vietā?
 ORM (Object Relational Mapping) is a programming technique that allows developers to interact with a database using object-oriented programming concepts without having to write raw SQL queries. On the other hand, writing raw SQL queries involves writing SQL code directly to interact with a database
+#Uzraksti Eloquent ORM pieprasījumu modelim User, kur nepieciešams iegūt visus
+lietotājus kuriem reitings ir lielāks par 4. Lietotāju tabulas struktūra:
+use App\Models\User;
+
+$users = User::where('rating', '>', 4)->get();
